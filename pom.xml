@@ -18,6 +18,7 @@
         <module>eureka-provider</module>
         <module>eureka-ribbon</module>
         <module>eureka-feign</module>
+        <module>eureka-zuul</module>
     </modules>
 
     <properties>
