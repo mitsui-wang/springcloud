@@ -21,6 +21,7 @@ public class EurekaProviderApplication {
 
     @RequestMapping("/hi")
     public String home() {
+        System.out.println("enter provider");
         return port;
     }
 

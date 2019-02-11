@@ -1,37 +1,17 @@
 
----
 server:
   port: 8761
 spring:
-  profiles: peer1
   application:
     name: eureka-server
 eureka:
   server:
     eureka.server.enable-self-preservation: false
   instance:
-    hostname: peer1
+    hostname: ${EUREKA_HOST_NAME:localhost}
   client:
-    registerWithEureka: true
-    fetchRegistry: true
+    registerWithEureka: ${BOOL_REGISTER:false}
+    fetchRegistry: ${BOOL_FETCH:false}
     serviceUrl:
-      defaultZone: http://peer2:8861/eureka/
+      defaultZone: ${EUREKA_URL_LIST:http://localhost:8761/eureka/}
 
-
----
-server:
-  port: 8861
-spring:
-  profiles: peer2
-  application:
-    name: eureka-server
-eureka:
-  server:
-    eureka.server.enable-self-preservation: false
-  instance:
-    hostname: peer2
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://peer1:8761/eureka/

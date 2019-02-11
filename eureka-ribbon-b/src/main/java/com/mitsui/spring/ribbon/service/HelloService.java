@@ -17,8 +17,10 @@ public class HelloService {
     @HystrixCommand(fallbackMethod = "hiError")
     public String hiService() {
         System.out.println("enter");
-        if (true) {
-            throw new RuntimeException("1");
+        try {
+            Thread.sleep(5000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
         System.out.println("before get");
         return restTemplate.getForObject("http://eureka-provider/hi",String.class);

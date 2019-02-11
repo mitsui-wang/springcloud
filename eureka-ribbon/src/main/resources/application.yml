@@ -7,3 +7,15 @@ server:
 spring:
   application:
     name: eureka-ribbon
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+
+ribbon:
+  ReadTimeout: 2000
+  ConnectTimeout: 2000

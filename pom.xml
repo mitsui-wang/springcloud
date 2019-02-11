@@ -19,6 +19,7 @@
         <module>eureka-ribbon</module>
         <module>eureka-feign</module>
         <module>eureka-zuul</module>
+        <module>eureka-ribbon-b</module>
     </modules>
 
     <properties>

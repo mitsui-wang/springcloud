@@ -24,5 +24,6 @@ public class RibbonApplication {
     RestTemplate restTemplate() {
         return new RestTemplate();
     }
+
 }
 
